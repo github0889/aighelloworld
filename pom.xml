@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>War-examples</groupId>
+	<artifactId>HelloWorldWar</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>HWorldWar</name>
+	<url>http://maven.apache.org</url>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.2.4.RELEASE</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version>
+  		<scope>test</scope>
+  	</dependency>
+	</dependencies>
+
+	<build>
+	<finalName>Beach</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		  <plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<path>/Beach</path>
+			</configuration>
+		  </plugin>
+			<plugin>
+      <groupId>org.jacoco</groupId>
+      <artifactId>jacoco-maven-plugin</artifactId>
+      <version>0.7.5.201505241946</version>
+      <executions>
+      	<execution>
+      		<id>prepare-agent</id>
+      		<goals>
+      			<goal>prepare-agent</goal>
+      		</goals>
+      	</execution>
+      	<execution>
+      		<id>post-unit-test</id>
+      		<phase>test</phase>
+      		<goals>
+      			<goal>report</goal>
+      		</goals>
+      		<configuration>
+      			<!-- Sets the path to the file which contains the execution data. -->
+
+      			<dataFile>target/jacoco.exec</dataFile>
+      			<!-- Sets the output directory for the code coverage report. -->
+      			<outputDirectory>target/jacoco-ut</outputDirectory>
+      		</configuration>
+      	</execution>
+      </executions>
+	</plugin>
+		</plugins>
+	</build>
+</project>
