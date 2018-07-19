@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>War-examples</groupId>
-	<artifactId>HelloWorldWar</artifactId>
+	<artifactId>Beach-App</artifactId>
 	<version>1.0.0.${BUILD_NUMBER}</version>
-	<name>HWorldWar</name>
+	<name>Beach</name>
 	<url>http://maven.apache.org</url>
 	<packaging>war</packaging>
 
